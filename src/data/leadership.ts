@@ -8,7 +8,7 @@ export const leadershipMembers: LeadershipMember[] = [
     bio: 'A market strategist and relationship builder with deep knowledge of the Pune real estate landscape. Known for sharp research, trusted consulting, and end-to-end execution across investor advisory, land monetization, and developer sales mandates.',
     focusAreas: [
       'Land Monetization & Feasibility Assessment',
-      'Investor & Homebuyer Strategy',
+      'Investor Strategy',
       'Developer Mandate Structuring',
       'Due Diligence & Risk Mitigation Coordination',
     ],

@@ -113,14 +113,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             </Link>
 
             <Link
-              to="/for-investors-homebuyers"
+              to="/for-investors"
               className={`text-sm font-medium transition-colors ${
-                isActive('/for-investors-homebuyers')
+                isActive('/for-investors')
                   ? 'text-brand-accent font-semibold'
                   : 'text-slate-200 hover:text-white'
               }`}
             >
-              For Investors & Homebuyers
+              For Investors
             </Link>
 
             {/* Services Dropdown */}
@@ -272,10 +272,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
               About Estatix
             </Link>
             <Link
-              to="/for-investors-homebuyers"
+              to="/for-investors"
               className="block text-lg font-medium text-slate-200 hover:text-brand-accent border-b border-teal-900 pb-2"
             >
-              For Investors & Homebuyers
+              For Investors
             </Link>
 
             <div className="border-b border-teal-900 pb-3">

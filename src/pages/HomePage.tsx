@@ -107,8 +107,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
                 <span className="text-slate-400 text-[11px]">Brand operator matchmaking</span>
               </div>
               <div className="space-y-1">
-                <span className="font-bold text-white block text-sm">Buyer Advisory</span>
-                <span className="text-slate-400 text-[11px]">RERA & carpet area clarity</span>
+                <span className="font-bold text-white block text-sm">Investor Advisory</span>
+                <span className="text-slate-400 text-[11px]">Opportunity & product assessment</span>
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
             </div>
             <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
               <Link
-                to="/for-investors-homebuyers"
+                to="/for-investors"
                 className="text-xs font-semibold text-teal-900 hover:text-teal-700 flex items-center gap-1"
               >
                 <span>Investor Advisory</span>
@@ -164,50 +164,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
                 className="text-xs text-brand-accentDark hover:underline font-semibold"
               >
                 Discuss an Investment
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2: Homebuyers */}
-          <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-7 shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group">
-            <div className="space-y-4">
-              <div className="w-11 h-11 rounded-lg bg-teal-50 border border-teal-100 text-teal-900 flex items-center justify-center">
-                <Building2 className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-900 transition-colors">
-                Homebuyers & Families
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Guiding you from requirement mapping to final possession. Transparent carpet-area assessment, RERA scrutiny, unbiased location comparison, and negotiation support.
-              </p>
-              <ul className="text-xs text-slate-600 space-y-2 pt-1">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Budget & lifestyle requirement matching</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Document review coordination & RERA checks</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Site visit coordination & price negotiation</span>
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-              <Link
-                to="/for-investors-homebuyers"
-                className="text-xs font-semibold text-teal-900 hover:text-teal-700 flex items-center gap-1"
-              >
-                <span>Homebuyer Guide</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <button
-                onClick={() => onOpenConsultation('homebuyer')}
-                className="text-xs text-brand-accentDark hover:underline font-semibold"
-              >
-                Find a Home
               </button>
             </div>
           </div>
@@ -501,7 +457,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
               subtitle="Real estate is too often reduced to aggressive brokerage. At Estatix, we operate as strategic advisors who understand land mechanics, development economics, and buyer behavior."
             />
             <p className="text-sm text-slate-600 leading-relaxed">
-              From helping a family choose a home to supporting a developer’s sales mandate, our approach connects client requirements with practical execution.
+              From evaluating an investment to supporting a developer’s sales mandate, our approach connects client requirements with practical execution.
             </p>
             <div className="pt-2">
               <Link
@@ -740,7 +696,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
               Looking for Trusted Real Estate Direction in Pune?
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Whether you are evaluating a land parcel, seeking a mandate partner for your residential development, or searching for your family’s next home, schedule a focused conversation with our advisory team.
+              Whether you are evaluating an investment, exploring a land parcel, or seeking a mandate partner for your development, schedule a focused conversation with our advisory team.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">

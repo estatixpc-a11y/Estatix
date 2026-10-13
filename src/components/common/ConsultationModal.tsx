@@ -191,7 +191,6 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               >
                 <option value="consultation">General Strategic Advisory</option>
                 <option value="investment">Real Estate Investment Advisory</option>
-                <option value="homebuyer">Homebuyer Property Search & Verification</option>
                 <option value="mandate_sales">Developer Mandate Sales & Marketing</option>
                 <option value="plotted_development">Plotted Development Planning & Sales</option>
                 <option value="land_parcel">Land Parcel Monetization & Acquisition</option>

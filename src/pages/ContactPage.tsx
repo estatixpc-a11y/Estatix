@@ -255,7 +255,6 @@ export const ContactPage: React.FC = () => {
                       >
                         <option value="consultation">General Property Advisory</option>
                         <option value="investment">Real Estate Investment Advisory</option>
-                        <option value="homebuyer">Homebuyer Search & Verification</option>
                         <option value="mandate_sales">Developer Mandate Sales</option>
                         <option value="plotted_development">Plotted Development Planning</option>
                         <option value="land_parcel">Land Parcel Monetization</option>

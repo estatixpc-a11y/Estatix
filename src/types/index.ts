@@ -1,6 +1,5 @@
 export type AudienceType = 
   | 'investor' 
-  | 'homebuyer' 
   | 'developer' 
   | 'landowner' 
   | 'hospitality' 
@@ -9,7 +8,6 @@ export type AudienceType =
 export type EnquiryCategory = 
   | 'consultation' 
   | 'investment' 
-  | 'homebuyer' 
   | 'mandate_sales' 
   | 'plotted_development' 
   | 'land_parcel' 

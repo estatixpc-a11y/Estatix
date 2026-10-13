@@ -45,14 +45,14 @@ export const Footer: React.FC = () => {
                 >
                   <YoutubeIcon className="w-4 h-4" />
                 </a>
-                <a
+                {siteConfig.brochure.available && (<a
                   href={siteConfig.brochure.downloadUrl}
                   download="Estatix_Corporate_Brochure.pdf"
                   className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-teal-900/80 hover:bg-teal-800 text-slate-200 hover:text-white text-xs font-medium transition-colors border border-teal-800/80"
                 >
                   <FileText className="w-3.5 h-3.5 text-brand-accent" />
                   <span>Corporate Brochure PDF</span>
-                </a>
+                </a>)}
               </div>
             </div>
 
@@ -63,13 +63,8 @@ export const Footer: React.FC = () => {
               </h3>
               <ul className="space-y-2.5 text-xs">
                 <li>
-                  <Link to="/for-investors-homebuyers" className="text-slate-400 hover:text-brand-accent transition-colors">
+                  <Link to="/for-investors" className="text-slate-400 hover:text-brand-accent transition-colors">
                     Real Estate Investors
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/for-investors-homebuyers" className="text-slate-400 hover:text-brand-accent transition-colors">
-                    Homebuyers & Families
                   </Link>
                 </li>
                 <li>
@@ -186,13 +181,13 @@ export const Footer: React.FC = () => {
             <Link to="/contact" className="hover:text-slate-300 transition-colors">
               Contact & Directions
             </Link>
-            <a
+            {siteConfig.brochure.available && (<a
               href={siteConfig.brochure.downloadUrl}
               download="Estatix_Corporate_Brochure.pdf"
               className="text-brand-accent hover:underline"
             >
               Download Brochure
-            </a>
+            </a>)}
           </div>
         </div>
       </div>

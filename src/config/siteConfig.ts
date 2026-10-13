@@ -59,7 +59,7 @@ export const siteConfig: SiteConfig = {
   tagline: 'From Land to Lasting Value.',
   headline: 'From Land to Lasting Value.',
   supportingCopy:
-    'Real estate advisory, development strategy, and sales expertise for investors, homebuyers, developers, and landowners across Pune and Maharashtra.',
+    'Real estate advisory, development strategy, and sales expertise for investors, developers, and landowners across Pune and Maharashtra.',
   primaryMarket: 'Pune and Maharashtra',
   domain: {
     preferred: 'estatix.io',
@@ -97,7 +97,7 @@ export const siteConfig: SiteConfig = {
     main: [
       { name: 'Home', href: '/' },
       { name: 'About', href: '/about' },
-      { name: 'For Investors & Homebuyers', href: '/for-investors-homebuyers' },
+      { name: 'For Investors', href: '/for-investors' },
       { name: 'Services', href: '/services' },
       { name: 'Our Work', href: '/our-work' },
       { name: 'Channel Partners', href: '/channel-partners' },
@@ -128,6 +128,6 @@ export const siteConfig: SiteConfig = {
   },
   brochure: {
     downloadUrl: '/assets/brochure/Estatix_Corporate_Brochure.pdf',
-    available: true,
+    available: false,
   },
 };

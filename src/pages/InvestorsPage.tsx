@@ -16,14 +16,13 @@ import {
 import { siteConfig } from '../config/siteConfig';
 import { SectionHeading } from '../components/common/SectionHeading';
 
-interface InvestorsHomebuyersPageProps {
-  onOpenConsultation: (type: 'investment' | 'homebuyer') => void;
+interface InvestorsPageProps {
+  onOpenConsultation: (type: 'investment') => void;
 }
 
-export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = ({
+export const InvestorsPage: React.FC<InvestorsPageProps> = ({
   onOpenConsultation,
 }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'investor' | 'homebuyer'>('all');
 
   return (
     <div className="space-y-24 sm:space-y-32 pb-16">
@@ -32,13 +31,13 @@ export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-bold uppercase tracking-widestBrand text-brand-accent block">
-              ADVISORY FOR PRIVATE CAPITAL & FAMILIES
+              REAL ESTATE INVESTMENT ADVISORY
             </span>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight font-sans leading-tight">
-              Investor & Homebuyer Advisory
+              Real Estate Investor Advisory
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              Whether allocating capital into high-growth Pune micro-markets or selecting a long-term family residence, Estatix replaces aggressive sales pitches with data-backed property consulting.
+              Evaluate real estate opportunities across Pune and Maharashtra with a clear investment brief, market context, and practical advisory support.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -47,12 +46,6 @@ export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = (
                 className="px-6 py-3 bg-brand-accent hover:bg-brand-accentLight text-teal-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors"
               >
                 Discuss an Investment
-              </button>
-              <button
-                onClick={() => onOpenConsultation('homebuyer')}
-                className="px-6 py-3 bg-white hover:bg-slate-100 text-teal-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors"
-              >
-                Find a Home
               </button>
             </div>
           </div>
@@ -63,7 +56,7 @@ export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = (
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Structured Guidance"
-          title="The 6-Stage Buyer & Investor Journey"
+          title="The 6-Stage Investor Journey"
           subtitle="Every recommendation follows a transparent process designed to evaluate value, verify facts, and protect your capital."
         />
 
@@ -77,7 +70,7 @@ export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = (
               Requirement & Budget Assessment
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              We define your objective: capital growth, rental yield, or lifestyle criteria. We map strict budget limits, down payment plans, and borrowing eligibility.
+              We define your objective: capital growth, rental yield, and your investment horizon. We map strict budget limits, down payment plans, and borrowing eligibility.
             </p>
           </div>
 
@@ -225,74 +218,6 @@ export const InvestorsHomebuyersPage: React.FC<InvestorsHomebuyersPageProps> = (
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. DISTINCT SECTION: HOMEBUYERS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="homebuyers">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-subtle space-y-5">
-            <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">
-              What Homebuyers Experience with Estatix
-            </h3>
-
-            <div className="space-y-4 text-xs">
-              <div className="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
-                <h4 className="font-bold text-slate-900">Genuine Carpet Area Scrutiny</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  We verify actual usable room dimensions and balconies so you only pay for tangible living space.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
-                <h4 className="font-bold text-slate-900">MahaRERA & Sanction Checks</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  We inspect developer track records, sanction validity, and delivery milestones to safeguard your family’s savings.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
-                <h4 className="font-bold text-slate-900">Unbiased Multi-Project Comparison</h4>
-                <p className="text-slate-600 leading-relaxed">
-                  Because we advise across multiple leading developers, we compare options impartially rather than pushing a single site.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
-            <span className="text-xs font-bold uppercase tracking-widestBrand text-teal-850 block">
-              FOR HOMEBUYERS & FAMILIES
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 font-sans leading-tight">
-              A Transparent, Stress-Free Path to Your Next Home
-            </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Buying a home is one of the most consequential decisions a family makes. Yet buyers are frequently inundated with misleading floor plans, complex payment slabs, and aggressive call centers.
-            </p>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              At Estatix, we act as your personal real estate advocates. We understand your family’s commute, school requirements, and comfort priorities, shortlisting only verified developments that meet our strict quality benchmark.
-            </p>
-
-            <div className="pt-2 flex flex-wrap gap-3">
-              <button
-                onClick={() => onOpenConsultation('homebuyer')}
-                className="px-6 py-3 bg-brand-accent hover:bg-brand-accentLight text-teal-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2"
-              >
-                <span>Find a Home with Our Advisors</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <a
-                href={siteConfig.contact.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-3 border border-emerald-600 text-emerald-800 hover:bg-emerald-50 font-semibold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp an Advisor</span>
-              </a>
             </div>
           </div>
         </div>

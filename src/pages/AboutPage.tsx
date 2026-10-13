@@ -34,7 +34,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenConsultation }) => {
               A Disciplined Real Estate Advisory Bridging Land, Strategy & Sales
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              Estatix was established to solve real estate with analytical rigor and ground execution. Headquartered in Pune, we serve real estate investors, homebuyers, developers, and landowners across Maharashtra.
+              Estatix was established to solve real estate with analytical rigor and ground execution. Headquartered in Pune, we serve real estate investors, developers, and landowners across Maharashtra.
             </p>
           </div>
         </div>

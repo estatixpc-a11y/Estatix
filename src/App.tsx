@@ -10,7 +10,7 @@ import { ConsultationModal } from './components/common/ConsultationModal';
 // Pages
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
-import { InvestorsHomebuyersPage } from './pages/InvestorsHomebuyersPage';
+import { InvestorsPage } from './pages/InvestorsPage';
 import { ServicesIndexPage } from './pages/ServicesIndexPage';
 import { MandateSalesPage } from './pages/MandateSalesPage';
 import { PlottingDevelopmentPage } from './pages/PlottingDevelopmentPage';
@@ -28,7 +28,7 @@ function ScrollToTop() {
   useEffect(() => {
     if (hash) requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
     else window.scrollTo(0, 0);
-    const titles: Record<string,string> = {'/':'From Land to Lasting Value','/about':'About Estatix','/for-investors-homebuyers':'For Investors & Homebuyers','/services':'Our Services','/services/mandate-sales':'Mandate Sales & Project Marketing','/services/plotting-development':'Plotting Development & Planning','/services/land-monetization':'Land Monetization & Acquisition','/services/hospitality-consulting':'Hospitality Consulting','/our-work':'Our Work','/channel-partners':'Channel Partners','/contact':'Contact Estatix','/privacy':'Privacy & Enquiries'};
+    const titles: Record<string,string> = {'/':'From Land to Lasting Value','/about':'About Estatix','/for-investors':'For Investors','/services':'Our Services','/services/mandate-sales':'Mandate Sales & Project Marketing','/services/plotting-development':'Plotting Development & Planning','/services/land-monetization':'Land Monetization & Acquisition','/services/hospitality-consulting':'Hospitality Consulting','/our-work':'Our Work','/channel-partners':'Channel Partners','/contact':'Contact Estatix','/privacy':'Privacy & Enquiries'};
     const study = caseStudies.find(item => pathname === `/our-work/${item.id}`);
     const title = study?.title || titles[pathname] || 'Estatix';
     const description = study?.outcome || `${title}. Real estate advisory and project expertise across Pune and Maharashtra. Contact Estatix on +91 7000489767.`;
@@ -66,7 +66,8 @@ export function App() {
           <Routes>
             <Route path="/" element={<HomePage onOpenConsultation={(type) => openConsultation(type || 'consultation', 'Home Page')} />} />
             <Route path="/about" element={<AboutPage onOpenConsultation={() => openConsultation('consultation', 'About Page')} />} />
-            <Route path="/for-investors-homebuyers" element={<InvestorsHomebuyersPage onOpenConsultation={(type) => openConsultation(type, 'Investors & Homebuyers Page')} />} />
+            <Route path="/for-investors-homebuyers" element={<Navigate to="/for-investors" replace />} />
+            <Route path="/for-investors" element={<InvestorsPage onOpenConsultation={(type) => openConsultation(type, 'Investors Page')} />} />
             <Route path="/services" element={<ServicesIndexPage onOpenConsultation={() => openConsultation('consultation', 'Services Hub')} />} />
             <Route path="/services/mandate-sales" element={<MandateSalesPage onOpenConsultation={() => openConsultation('mandate_sales', 'Mandate Sales Page')} />} />
             <Route path="/services/plotting-development" element={<PlottingDevelopmentPage onOpenConsultation={() => openConsultation('plotted_development', 'Plotting Development Page')} />} />
