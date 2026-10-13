@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Support for users with reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .tracking-widestBrand {
+    letter-spacing: 0.22em;
+  }
+}
+
+@layer base {
+  :focus-visible { outline: 3px solid #15526b; outline-offset: 4px; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+}
+@media (max-width: 767px) { main { padding-bottom: 20px; } }
+
+.skip-link { position: fixed; top: -100px; left: 12px; z-index: 100; padding: 12px; background: white; color: #051d26; }
+.skip-link:focus { top: 12px; }
