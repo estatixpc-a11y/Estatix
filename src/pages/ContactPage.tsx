@@ -329,7 +329,7 @@ export const ContactPage: React.FC = () => {
                       disabled={isSubmitting}
                       className="px-8 py-3.5 bg-teal-900 hover:bg-teal-800 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shadow-sm disabled:opacity-70"
                     >
-                      {isSubmitting ? 'Preparing...' : 'Submit Enquiry'}
+                      {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                     </button>
                     <a
                       href={siteConfig.contact.whatsappUrl}

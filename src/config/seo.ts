@@ -59,3 +59,6 @@ export const pageMetadata: Record<string,[string,string]> = {
 };
 for (const study of caseStudies) pageMetadata[`/our-work/${study.id}`] = [`${study.title} | Estatix Project Experience`,study.outcome];
 export const siteOrigin="https://estatix.io";
+
+export const metadataPath=(path:string)=>path.replace(/\/+$/,'') || '/';
+export const canonicalUrl=(path:string)=>siteOrigin+(metadataPath(path)==='/'?'/':metadataPath(path)+'/');

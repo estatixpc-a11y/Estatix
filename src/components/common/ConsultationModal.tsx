@@ -267,7 +267,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 disabled={isSubmitting}
                 className="w-full sm:w-auto flex-1 px-6 py-3 bg-teal-900 hover:bg-teal-800 text-white font-semibold rounded-lg text-sm transition-colors shadow-sm disabled:opacity-70"
               >
-                {isSubmitting ? 'Preparing...' : 'Submit Enquiry'}
+                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
               </button>
               <a
                 href={siteConfig.contact.whatsappUrl}

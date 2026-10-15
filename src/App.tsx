@@ -1,4 +1,4 @@
-import { pageMetadata, siteOrigin } from './config/seo';
+import { pageMetadata, metadataPath, canonicalUrl } from './config/seo';
 import { OpportunityPage } from './pages/OpportunityPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { caseStudies } from './data/caseStudies';
@@ -30,13 +30,13 @@ function ScrollToTop() {
   useEffect(() => {
     if (hash) requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
     else window.scrollTo(0, 0);
-    const [title,description] = pageMetadata[pathname] || ['Page not found | Estatix','Explore Estatix real estate services in Pune and Maharashtra.'];
+    const [title,description] = pageMetadata[metadataPath(pathname)] || ['Page not found | Estatix','Explore Estatix real estate services in Pune and Maharashtra.'];
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content',description);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content',title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content',description);
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href',siteOrigin+pathname);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content',siteOrigin+pathname);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href',canonicalUrl(pathname));
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content',canonicalUrl(pathname));
   }, [pathname, hash]);
   return null;
 }
