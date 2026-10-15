@@ -6,6 +6,7 @@ export type AudienceType =
   | 'channel_partner';
 
 export type EnquiryCategory = 
+  | 'residential_sales'
   | 'consultation' 
   | 'investment' 
   | 'mandate_sales' 
@@ -49,6 +50,7 @@ export interface ChannelPartnerFormData {
 }
 
 export type CaseStudyStatus = 
+  | 'Bulk Residential Sales'
   | 'Completed Sales Mandate' 
   | 'Hospitality Engagement (Signed)' 
   | 'Ongoing Business-Planning Engagement' 
@@ -71,6 +73,8 @@ export interface CaseStudy {
 }
 
 export interface LeadershipMember {
+  phone: string;
+  phoneDisplay: string;
   name: string;
   role: string;
   photo: string;

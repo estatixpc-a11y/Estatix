@@ -1,3 +1,4 @@
+import { submitEnquiry } from './submitEnquiry';
 import { useDialog } from './useDialog';
 import { EnquiryReady } from './EnquiryReady';
 import React, { useState, useEffect } from 'react';
@@ -61,11 +62,15 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    setSubmitted(true);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try { await submitEnquiry(formData, e.currentTarget); setSubmitted(true); }
+    catch(error) {setErrors(previous=>({...previous, submit:error instanceof Error?error.message:'Unable to save. Please try again.'}));}
+    finally {setIsSubmitting(false);}
   };
 
   const handleReset = () => {
@@ -115,8 +120,10 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 <EnquiryReady data={formData} onReset={() => setSubmitted(false)} />
 ) : (
 <form onSubmit={handleSubmit} className="p-6 space-y-4">
+<p hidden><label>Leave this empty<input name="website" autoComplete="off" tabIndex={-1} /></label></p>
+{errors.submit && <p role="alert" className="text-sm text-red-700">{errors.submit}</p>}
             <p className="text-xs text-slate-600 leading-relaxed">
-              Share your details below, review your enquiry, and send it to Estatix through WhatsApp.
+              Share your details below. Your enquiry is saved securely for our team to review.
             </p>
 
             {/* Name */}
@@ -189,7 +196,8 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value as EnquiryCategory })}
                 className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-teal-800"
               >
-                <option value="consultation">General Strategic Advisory</option>
+                <option value="residential_sales">High-End Residential Sales</option>
+<option value="consultation">General Strategic Advisory</option>
                 <option value="investment">Real Estate Investment Advisory</option>
                 <option value="mandate_sales">Developer Mandate Sales & Marketing</option>
                 <option value="plotted_development">Plotted Development Planning & Sales</option>
@@ -259,7 +267,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 disabled={isSubmitting}
                 className="w-full sm:w-auto flex-1 px-6 py-3 bg-teal-900 hover:bg-teal-800 text-white font-semibold rounded-lg text-sm transition-colors shadow-sm disabled:opacity-70"
               >
-                {isSubmitting ? 'Preparing...' : 'Review & Continue on WhatsApp'}
+                {isSubmitting ? 'Preparing...' : 'Submit Enquiry'}
               </button>
               <a
                 href={siteConfig.contact.whatsappUrl}

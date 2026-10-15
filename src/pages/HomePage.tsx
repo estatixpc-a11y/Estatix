@@ -1,3 +1,4 @@
+import { BusinessHighlights } from '../components/common/BusinessHighlights';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -54,8 +55,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-sans leading-[1.15] text-white">
-              From Land to <br className="hidden sm:inline" />
-              <span className="text-brand-accent font-serif italic font-normal">Lasting Value.</span>
+              Mandate Expertise. <br className="hidden sm:inline" />
+              <span className="text-brand-accent font-serif italic font-normal">Investment Clarity.</span>
             </h1>
 
             {/* Supporting Copy */}
@@ -115,6 +116,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
         </div>
       </section>
 
+      <BusinessHighlights />
       {/* 2. AUDIENCE PATHWAYS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -124,50 +126,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {/* Card 1: Investors */}
-          <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-7 shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group">
-            <div className="space-y-4">
-              <div className="w-11 h-11 rounded-lg bg-teal-50 border border-teal-100 text-teal-900 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-900 transition-colors">
-                Real Estate Investors
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Objective evaluation of Pune growth corridors, rental yields, capital appreciation potential, and entry pricing. We filter out speculative claims and present verified opportunities.
-              </p>
-              <ul className="text-xs text-slate-600 space-y-2 pt-1">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Micro-market data & absorption trends</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Rental yield & capital gains profiling</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
-                  <span>Risk screening on approvals & delivery track</span>
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-              <Link
-                to="/for-investors"
-                className="text-xs font-semibold text-teal-900 hover:text-teal-700 flex items-center gap-1"
-              >
-                <span>Investor Advisory</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <button
-                onClick={() => onOpenConsultation('investment')}
-                className="text-xs text-brand-accentDark hover:underline font-semibold"
-              >
-                Discuss an Investment
-              </button>
-            </div>
-          </div>
-
           {/* Card 3: Developers */}
           <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-7 shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group">
             <div className="space-y-4">
@@ -208,6 +166,50 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
                 className="text-xs text-brand-accentDark hover:underline font-semibold"
               >
                 Submit a Project
+              </button>
+            </div>
+          </div>
+
+          {/* Card 1: Investors */}
+          <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-7 shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group">
+            <div className="space-y-4">
+              <div className="w-11 h-11 rounded-lg bg-teal-50 border border-teal-100 text-teal-900 flex items-center justify-center">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-900 transition-colors">
+                Real Estate Investors
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Objective evaluation of Pune growth corridors, rental yields, capital appreciation potential, and entry pricing. We filter out speculative claims and present verified opportunities.
+              </p>
+              <ul className="text-xs text-slate-600 space-y-2 pt-1">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
+                  <span>Micro-market data & absorption trends</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
+                  <span>Rental yield & capital gains profiling</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-800 shrink-0" />
+                  <span>Risk screening on approvals & delivery track</span>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+              <Link
+                to="/for-investors"
+                className="text-xs font-semibold text-teal-900 hover:text-teal-700 flex items-center gap-1"
+              >
+                <span>Investor Advisory</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <button
+                onClick={() => onOpenConsultation('investment')}
+                className="text-xs text-brand-accentDark hover:underline font-semibold"
+              >
+                Discuss an Investment
               </button>
             </div>
           </div>
@@ -382,7 +384,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
             <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-subtle flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 inline-block">
-                  Completed Sales Mandate
+                  Bulk Residential Sales
                 </span>
                 <h3 className="text-xl font-bold text-slate-900 font-sans">
                   Eminence
@@ -391,12 +393,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
                   Pune Residential Market
                 </p>
                 <p className="text-xs text-slate-700 leading-relaxed pt-2">
-                  Eminence is sold out and forms part of Estatix’s completed project portfolio.
+                  Bulk residential sales completed through Estatix. Eminence was not an exclusive project mandate.
                 </p>
               </div>
               <div className="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
-                <span>Sold Out Mandate</span>
+                <span>Bulk Sales Completed</span>
               </div>
             </div>
 
@@ -614,6 +616,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {member.bio}
                 </p>
+                <a href={`tel:${member.phone}`} className="inline-flex py-2 text-sm font-semibold text-teal-800 underline underline-offset-4" aria-label={`Call ${member.name} on ${member.phoneDisplay}`}>{member.name.split(' ')[0]} · {member.phoneDisplay}</a>
                 <div className="pt-2 border-t border-slate-100">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">
                     Core Focus Areas

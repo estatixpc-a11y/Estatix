@@ -33,7 +33,12 @@ Project details are available at `/our-work/ekaant`, `/our-work/eminence`, `/our
 
 ## Enquiries
 
-The site prepares messages locally and lets visitors review and explicitly send them through WhatsApp. It does not have an email submission service, enquiry database, confirmed booking integration, advertising trackers, or analytics. The enquiry review must not be described as a received submission. No credentials are required for this handoff.
+Enquiries submit to Netlify Forms under `estatix-enquiries`, with form detection enabled on the Netlify project. All categories are saved privately in the hosting dashboard; visitor records are never committed to GitHub. The static form schema in `index.html` must include every field sent by the shared submit helper. Spam filtering uses Netlify's built-in filtering and a honeypot. Success appears only after an HTTP success response. WhatsApp is an optional direct contact route. Local previews intentionally refuse enquiry submissions. Preferred consultation times are requests, not confirmed bookings.
+
+## SEO
+
+The production build generates static HTML for each public route, plus a sitemap. Edit `src/config/seo.ts` for titles and descriptions; `src/prerender.tsx` renders the route content at build time. Local business structured data lives in `index.html`. No ranking guarantees, review scores, opening hours, or verification codes are fabricated. Google Search Console ownership and Google Business Profile management need the owner's verified Google account. The live sitemap is https://estatix.io/sitemap.xml.
+
 
 ## Brochure
 

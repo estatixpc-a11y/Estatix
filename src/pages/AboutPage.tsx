@@ -206,6 +206,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenConsultation }) => {
                     <p className="text-xs text-slate-600 leading-relaxed pt-1">
                       {member.bio}
                     </p>
+                <a href={`tel:${member.phone}`} className="inline-flex py-2 text-sm font-semibold text-teal-800 underline underline-offset-4" aria-label={`Call ${member.name} on ${member.phoneDisplay}`}>{member.name.split(' ')[0]} · {member.phoneDisplay}</a>
                   </div>
                 </div>
 

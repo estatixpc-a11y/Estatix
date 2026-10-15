@@ -20,16 +20,14 @@ export const caseStudies: CaseStudy[] = [
   {
     "id": "eminence",
     "title": "Eminence",
-    "category": "Completed Sales Mandate",
+    "category": "Bulk Residential Sales",
     "location": "Pune",
-    "overview": "A residential project in Estatix’s completed sales portfolio.",
-    "clientBrief": "Residential project sales.",
-    "estatixRole": "Project sales engagement.",
-    "workDelivered": [
-      "Residential sales support."
-    ],
-    "outcome": "Eminence is sold out.",
-    "statusText": "Sold out",
+    "overview": "High-end residential bulk sales facilitated through Estatix. This engagement was not a project sales mandate.",
+    "clientBrief": "Bulk residential sales support.",
+    "estatixRole": "Bulk selling through Estatix, rather than an exclusive project mandate.",
+    "workDelivered": ["Bulk residential sales support."],
+    "outcome": "Bulk residential sales were completed through Estatix. Eminence is sold out.",
+    "statusText": "Bulk sales completed",
     "image": "/assets/projects/eminence-render.png",
     "imageCaption": "Eminence architectural render from the project brochure.",
     "featured": true

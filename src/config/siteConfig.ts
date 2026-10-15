@@ -59,11 +59,11 @@ export const siteConfig: SiteConfig = {
   tagline: 'From Land to Lasting Value.',
   headline: 'From Land to Lasting Value.',
   supportingCopy:
-    'Real estate advisory, development strategy, and sales expertise for investors, developers, and landowners across Pune and Maharashtra.',
+    'Mandate sales and project execution for developers. Investment evaluation, land opportunities, and high-end residential sales across Pune and Maharashtra.',
   primaryMarket: 'Pune and Maharashtra',
   domain: {
     preferred: 'estatix.io',
-    status: 'intended_subject_to_availability',
+    status: 'active',
   },
   contact: {
     phone: '+917000489767',
@@ -104,6 +104,8 @@ export const siteConfig: SiteConfig = {
       { name: 'Contact', href: '/contact' },
     ],
     services: [
+      { name: 'High-End Residential Sales', href: '/services/high-end-residential-sales', description: 'Premium residential sales, investment selection, buyer advisory, and bulk sales coordination.' },
+      { name: 'Land for JV & Outright Sale', href: '/land-opportunities', description: 'Land opportunities for developers, investors, and joint venture partners.' },
       {
         name: 'Mandate Sales & Project Marketing',
         href: '/services/mandate-sales',

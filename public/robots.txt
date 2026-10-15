@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://estatix.io/sitemap.xml

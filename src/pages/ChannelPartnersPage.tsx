@@ -1,3 +1,4 @@
+import { submitEnquiry } from '../components/common/submitEnquiry';
 import { EnquiryReady } from '../components/common/EnquiryReady';
 import React, { useState } from 'react';
 import { 
@@ -48,11 +49,15 @@ export const ChannelPartnersPage: React.FC = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    setSubmitted(true);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try { await submitEnquiry(formData, e.currentTarget); setSubmitted(true); }
+    catch(error) {setErrors(previous=>({...previous, submit:error instanceof Error?error.message:'Unable to save. Please try again.'}));}
+    finally {setIsSubmitting(false);}
   };
 
   const onboardingSteps = [
@@ -216,7 +221,7 @@ export const ChannelPartnersPage: React.FC = () => {
               Register as an Estatix Channel Partner
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-              Prepare your introduction below, then review and send it to our team through WhatsApp to discuss onboarding.
+              Share your introduction below. Our team will review your registration enquiry and contact you about onboarding.
             </p>
           </div>
 
@@ -224,6 +229,8 @@ export const ChannelPartnersPage: React.FC = () => {
 <EnquiryReady data={formData} onReset={() => setSubmitted(false)} />
 ) : (
 <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
+<p hidden><label>Leave this empty<input name="website" autoComplete="off" tabIndex={-1} /></label></p>
+{errors.submit && <p role="alert" className="text-sm text-red-700">{errors.submit}</p>}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Full Name */}
                 <div>
@@ -353,7 +360,7 @@ export const ChannelPartnersPage: React.FC = () => {
                   disabled={isSubmitting}
                   className="px-8 py-3.5 bg-teal-900 hover:bg-teal-800 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shadow-sm disabled:opacity-70"
                 >
-                  Review & Continue on WhatsApp
+                  Submit Enquiry
                 </button>
                 <a
                   href={siteConfig.contact.whatsappUrl}

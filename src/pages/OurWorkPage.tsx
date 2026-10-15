@@ -29,6 +29,7 @@ export const OurWorkPage: React.FC<OurWorkPageProps> = ({ onOpenConsultation }) 
   const categories: Array<'All' | CaseStudyStatus> = [
     'All',
     'Completed Sales Mandate',
+    'Bulk Residential Sales',
     'Hospitality Engagement (Signed)',
     'Ongoing Business-Planning Engagement',
     'Channel Partner Alliance',
@@ -48,10 +49,10 @@ export const OurWorkPage: React.FC<OurWorkPageProps> = ({ onOpenConsultation }) 
               SELECTED PROJECTS & ENGAGEMENTS
             </span>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight font-sans leading-tight">
-              Our Work & Mandate Track Record
+              Our Work: Mandates, Bulk Sales & Advisory
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              A transparent record of completed project sales mandates, signed hospitality agreements, ongoing planning advisory, and channel partner showcases across Pune and Maharashtra.
+              A transparent record of completed project sales mandates, bulk residential sales, signed hospitality agreements, ongoing planning advisory, and channel partner showcases across Pune and Maharashtra.
             </p>
           </div>
         </div>

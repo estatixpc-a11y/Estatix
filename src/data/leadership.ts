@@ -3,6 +3,8 @@ import { LeadershipMember } from '../types';
 export const leadershipMembers: LeadershipMember[] = [
   {
     name: 'Adarsh Chouksey',
+    phone: '+917000489767',
+    phoneDisplay: '+91 7000489767',
     role: 'Co-Founder & Managing Partner',
     photo: '/assets/team/adarsh-chouksey.png',
     bio: 'A market strategist and relationship builder with deep knowledge of the Pune real estate landscape. Known for sharp research, trusted consulting, and end-to-end execution across investor advisory, land monetization, and developer sales mandates.',
@@ -17,7 +19,9 @@ export const leadershipMembers: LeadershipMember[] = [
   },
   {
     name: 'Kevin John',
-    role: 'Co-Founder & Partner',
+    phone: '+919373357620',
+    phoneDisplay: '+91 93733 57620',
+    role: 'Co-Founder & Managing Partner',
     photo: '/assets/team/kevin-john.png',
     bio: 'Creative and driven, Kevin leads branding, builder collaborations, and channel partner management at Estatix. His strength lies in positioning developments with market clarity and forging enduring alliances between builders, brokers, and institutional stakeholders.',
     focusAreas: [

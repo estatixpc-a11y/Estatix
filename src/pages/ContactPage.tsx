@@ -1,3 +1,5 @@
+import { submitEnquiry } from '../components/common/submitEnquiry';
+import { FounderContacts } from '../components/common/FounderContacts';
 import { EnquiryReady } from '../components/common/EnquiryReady';
 import React, { useState } from 'react';
 import { 
@@ -47,11 +49,15 @@ export const ContactPage: React.FC = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    setSubmitted(true);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try { await submitEnquiry(formData, e.currentTarget); setSubmitted(true); }
+    catch(error) {setErrors(previous=>({...previous, submit:error instanceof Error?error.message:'Unable to save. Please try again.'}));}
+    finally {setIsSubmitting(false);}
   };
 
   return (
@@ -138,6 +144,7 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
+            <FounderContacts />
             {/* Social Channels */}
             <div className="space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
@@ -185,6 +192,8 @@ export const ContactPage: React.FC = () => {
 <EnquiryReady data={formData} onReset={() => setSubmitted(false)} />
 ) : (
 <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4">
+<p hidden><label>Leave this empty<input name="website" autoComplete="off" tabIndex={-1} /></label></p>
+{errors.submit && <p role="alert" className="text-sm text-red-700">{errors.submit}</p>}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Full Name */}
                     <div>
@@ -253,7 +262,8 @@ export const ContactPage: React.FC = () => {
                         onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value as EnquiryCategory })}
                         className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-teal-800"
                       >
-                        <option value="consultation">General Property Advisory</option>
+                        <option value="residential_sales">High-End Residential Sales</option>
+<option value="consultation">General Property Advisory</option>
                         <option value="investment">Real Estate Investment Advisory</option>
                         <option value="mandate_sales">Developer Mandate Sales</option>
                         <option value="plotted_development">Plotted Development Planning</option>
@@ -319,7 +329,7 @@ export const ContactPage: React.FC = () => {
                       disabled={isSubmitting}
                       className="px-8 py-3.5 bg-teal-900 hover:bg-teal-800 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shadow-sm disabled:opacity-70"
                     >
-                      {isSubmitting ? 'Preparing...' : 'Review & Continue on WhatsApp'}
+                      {isSubmitting ? 'Preparing...' : 'Submit Enquiry'}
                     </button>
                     <a
                       href={siteConfig.contact.whatsappUrl}

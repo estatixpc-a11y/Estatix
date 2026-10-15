@@ -1,7 +1,9 @@
+import { pageMetadata, siteOrigin } from './config/seo';
+import { OpportunityPage } from './pages/OpportunityPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { caseStudies } from './data/caseStudies';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate, StaticRouter } from 'react-router-dom';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { MobileContactBar } from './components/common/MobileContactBar';
@@ -28,19 +30,18 @@ function ScrollToTop() {
   useEffect(() => {
     if (hash) requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
     else window.scrollTo(0, 0);
-    const titles: Record<string,string> = {'/':'From Land to Lasting Value','/about':'About Estatix','/for-investors':'For Investors','/services':'Our Services','/services/mandate-sales':'Mandate Sales & Project Marketing','/services/plotting-development':'Plotting Development & Planning','/services/land-monetization':'Land Monetization & Acquisition','/services/hospitality-consulting':'Hospitality Consulting','/our-work':'Our Work','/channel-partners':'Channel Partners','/contact':'Contact Estatix','/privacy':'Privacy & Enquiries'};
-    const study = caseStudies.find(item => pathname === `/our-work/${item.id}`);
-    const title = study?.title || titles[pathname] || 'Estatix';
-    const description = study?.outcome || `${title}. Real estate advisory and project expertise across Pune and Maharashtra. Contact Estatix on +91 7000489767.`;
-    document.title = `${title} | Estatix`;
+    const [title,description] = pageMetadata[pathname] || ['Page not found | Estatix','Explore Estatix real estate services in Pune and Maharashtra.'];
+    document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content',description);
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content',document.title);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content',title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content',description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href',siteOrigin+pathname);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content',siteOrigin+pathname);
   }, [pathname, hash]);
   return null;
 }
 
-export function App() {
+export function App({initialPath}: {initialPath?:string} = {}) {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [consultationType, setConsultationType] = useState<EnquiryCategory>('consultation');
   const [sourceContext, setSourceContext] = useState<string>('General Advisory');
@@ -55,8 +56,8 @@ export function App() {
     setIsConsultationOpen(false);
   };
 
-  return (
-    <BrowserRouter>
+  const content = (
+    <>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-teal-900 selection:text-white pb-14 md:pb-0">
         <Navbar onOpenConsultation={() => openConsultation('consultation', 'Navbar')} />
@@ -73,6 +74,8 @@ export function App() {
             <Route path="/services/plotting-development" element={<PlottingDevelopmentPage onOpenConsultation={() => openConsultation('plotted_development', 'Plotting Development Page')} />} />
             <Route path="/services/land-monetization" element={<LandMonetizationPage onOpenConsultation={() => openConsultation('land_parcel', 'Land Monetization Page')} />} />
             <Route path="/services/hospitality-consulting" element={<HospitalityConsultingPage onOpenConsultation={() => openConsultation('hospitality', 'Hospitality Consulting Page')} />} />
+            <Route path="/land-opportunities" element={<OpportunityPage kind="land" onOpenConsultation={()=>openConsultation('land_parcel','Land JV & Outright Sale')} />} />
+            <Route path="/services/high-end-residential-sales" element={<OpportunityPage kind="residential" onOpenConsultation={()=>openConsultation('residential_sales','High-End Residential Sales')} />} />
             <Route path="/our-work" element={<OurWorkPage onOpenConsultation={() => openConsultation('consultation', 'Our Work Page')} />} />
             <Route path="/our-work/:slug" element={<CaseStudyPage onOpenConsultation={() => openConsultation('consultation', 'Case Study')} />} />
             <Route path="/channel-partners" element={<ChannelPartnersPage />} />
@@ -95,8 +98,9 @@ export function App() {
           sourceContext={sourceContext}
         />
       </div>
-    </BrowserRouter>
+    </>
   );
+  return initialPath ? <StaticRouter location={initialPath}>{content}</StaticRouter> : <BrowserRouter>{content}</BrowserRouter>;
 }
 
 export default App;

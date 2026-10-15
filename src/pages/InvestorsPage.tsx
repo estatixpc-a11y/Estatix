@@ -241,7 +241,7 @@ export const InvestorsPage: React.FC<InvestorsPageProps> = ({
             </p>
 
             <p className="text-sm text-slate-300 leading-relaxed">
-              Our previous mandates—such as <span className="font-semibold text-white">Ekaant</span> and <span className="font-semibold text-white">Eminence</span>—are 100% sold out and are not presented as available stock. For current, verified inventory currently matching your specific criteria, please connect directly with our advisory desk.
+              Our completed work includes the <span className="font-semibold text-white">Ekaant sales mandate</span> and <span className="font-semibold text-white">bulk sales at Eminence</span>. Both projects are sold out. For current opportunities matching your criteria, speak with our team.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-3">

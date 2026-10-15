@@ -20,6 +20,8 @@ interface ServicesIndexPageProps {
 
 export const ServicesIndexPage: React.FC<ServicesIndexPageProps> = ({ onOpenConsultation }) => {
   const servicesList = [
+    {title:'High-End Residential Sales',href:'/services/high-end-residential-sales',targetAudience:'Buyers, Investors & Developers',icon:Building2,summary:'Premium residential property sales and bulk selling through Estatix, with requirement assessment and transaction coordination.',keyCapabilities:['Premium property selection','Investment assessment and location fit','Bulk sales support for developers','Site visits and transaction coordination'],ctaText:'Explore Residential Sales'},
+    {title:'Land for JV & Outright Sale',href:'/land-opportunities',targetAudience:'Developers, Investors & Landowners',icon:Landmark,summary:'Land opportunities for joint ventures, joint development, and outright sale across Pune and Maharashtra.',keyCapabilities:['Developer land requirements','JV and outright-sale opportunities','Commercial feasibility assessment','Due diligence coordination'],ctaText:'Explore Land Opportunities'},
     {
       title: 'Mandate Sales & Project Marketing',
       href: '/services/mandate-sales',
@@ -109,7 +111,7 @@ export const ServicesIndexPage: React.FC<ServicesIndexPageProps> = ({ onOpenCons
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Core Practice Areas"
-          title="Four Specialized Service Verticals"
+          title="Specialist Services for Developers & Investors"
           subtitle="Explore how Estatix delivers measurable value across developer mandates, plotted developments, land transactions, and hospitality ventures."
         />
 

@@ -1,3 +1,4 @@
+import { FounderContacts } from './FounderContacts';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageSquare, MapPin, FileText, ArrowUpRight } from 'lucide-react';
@@ -191,6 +192,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
+    <div className="max-w-7xl mx-auto px-6 pb-10"><FounderContacts dark /></div></footer>
   );
 };

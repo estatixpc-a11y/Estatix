@@ -1,0 +1,2 @@
+import { leadershipMembers } from '../../data/leadership';
+export function FounderContacts({dark=false}: {dark?:boolean}) {return <div className="space-y-3"><p className="text-xs uppercase tracking-widest">Speak with a founder</p>{leadershipMembers.map(member=><a key={member.phone} href={`tel:${member.phone}`} className={`block text-sm font-semibold py-1 ${dark?'text-white':'text-teal-900'} hover:underline`}>{member.name.split(' ')[0]} · {member.phoneDisplay}</a>)}</div>;}
