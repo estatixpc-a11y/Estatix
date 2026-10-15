@@ -86,7 +86,7 @@ export const OurWorkPage: React.FC<OurWorkPageProps> = ({ onOpenConsultation }) 
           {filteredStudies.map((study) => (
             <div
               key={study.id}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group"
+              className={`bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-subtle hover:shadow-corporate transition-all duration-200 flex flex-col justify-between group ${study.id === 'ekaant' ? 'md:col-span-2 lg:col-span-3' : ''}`}
             >
               <div>
                 {/* Image Container */}

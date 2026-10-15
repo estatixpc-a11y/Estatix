@@ -357,9 +357,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
             subtitle="Selected outcomes from Estatix’s sales mandates and advisory engagements."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {/* Outcome 1: Ekaant */}
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-subtle flex flex-col justify-between">
+            <div className="md:col-span-2 lg:col-span-3 bg-white rounded-xl p-6 border border-slate-200 shadow-subtle flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 inline-block">
                   Completed Sales Mandate
@@ -535,11 +535,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredStudies.map((study) => (
               <div
                 key={study.id}
-                className="bg-teal-900/90 rounded-xl overflow-hidden border border-teal-800/80 shadow-corporate flex flex-col justify-between group hover:border-brand-accent/50 transition-all duration-200"
+                className={`bg-teal-900/90 rounded-xl overflow-hidden border border-teal-800/80 shadow-corporate flex flex-col justify-between group hover:border-brand-accent/50 transition-all duration-200 ${study.id === 'ekaant' ? 'md:col-span-2' : ''}`}
               >
                 <div>
                   <div className="relative h-56 w-full bg-teal-950 overflow-hidden">
