@@ -99,6 +99,7 @@ export const siteConfig: SiteConfig = {
       { name: 'About', href: '/about' },
       { name: 'For Investors', href: '/for-investors' },
       { name: 'Services', href: '/services' },
+      { name: 'Properties', href: '/properties' },
       { name: 'Our Work', href: '/our-work' },
       { name: 'Channel Partners', href: '/channel-partners' },
       { name: 'Contact', href: '/contact' },

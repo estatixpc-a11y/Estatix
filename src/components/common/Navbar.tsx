@@ -124,6 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             </Link>
 
             {/* Services Dropdown */}
+            <Link to="/properties" className={`text-sm font-medium transition-colors ${isActive('/properties') ? 'text-brand-accent font-semibold' : 'text-slate-200 hover:text-white'}`}>Properties</Link>
             <div 
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -313,6 +314,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             >
               Contact Us
             </Link>
+            <Link to="/properties" className="block text-lg font-medium text-slate-200 hover:text-brand-accent border-b border-teal-900 pb-2">Properties & Opportunities</Link>
 
             <div className="pt-4 space-y-3">
               <button

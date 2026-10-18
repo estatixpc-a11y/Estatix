@@ -125,6 +125,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             <p className="text-xs text-slate-600 leading-relaxed">
               Share your details below. Your enquiry is saved securely for our team to review.
             </p>
+            {sourceContext.startsWith('EST-VN-') && <p className="rounded-lg bg-teal-50 p-3 text-sm text-teal-950">Regarding: {sourceContext}</p>}
 
             {/* Name */}
             <div>

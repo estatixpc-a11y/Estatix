@@ -1,5 +1,6 @@
 import { pageMetadata, metadataPath, canonicalUrl } from './config/seo';
 import { OpportunityPage } from './pages/OpportunityPage';
+import { PropertiesPage, PropertyPage } from './pages/PropertiesPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { caseStudies } from './data/caseStudies';
 import React, { useState, useEffect } from 'react';
@@ -65,6 +66,8 @@ export function App({initialPath}: {initialPath?:string} = {}) {
         <a href="#main-content" className="skip-link">Skip to content</a>
         <main id="main-content" className="flex-1">
           <Routes>
+            <Route path="/properties" element={<PropertiesPage />} />
+            <Route path="/properties/:slug" element={<PropertyPage onEnquire={context=>openConsultation('investment',context)} />} />
             <Route path="/" element={<HomePage onOpenConsultation={(type) => openConsultation(type || 'consultation', 'Home Page')} />} />
             <Route path="/about" element={<AboutPage onOpenConsultation={() => openConsultation('consultation', 'About Page')} />} />
             <Route path="/for-investors-homebuyers" element={<Navigate to="/for-investors" replace />} />
