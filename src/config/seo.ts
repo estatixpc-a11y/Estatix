@@ -1,8 +1,8 @@
 import { caseStudies } from "../data/caseStudies";
 export const pageMetadata: Record<string,[string,string]> = {
-  "/properties": ["Buildings & Property Opportunities in Viman Nagar, Pune | Estatix", "Explore vacant and leased buildings for sale in Viman Nagar with Estatix. Request property details, commercial terms and a private site visit. Prices on enquiry."],
-  "/properties/viman-nagar-independent-building": ["Independent Building for Sale in Viman Nagar, Pune | Estatix", "Vacant independent building on an 895 sq. m. plot in Viman Nagar, Pune. Previously occupied by a college. Request details and a site visit. Price on enquiry."],
-  "/properties/viman-nagar-leased-building": ["Leased Building for Sale in Viman Nagar, Pune | Estatix", "Explore a leased back-office building in Viman Nagar with owner-reported rent of ₹4 lakh per month. Discuss tenancy or vacant possession. Price on enquiry."],
+  "/properties": ["Entire Buildings for Sale in Viman Nagar, Pune | Estatix", "Explore vacant and leased office buildings for sale in Viman Nagar, Pune. Compare potential uses, preliminary feasibility and possession options. Price on enquiry."],
+  "/properties/viman-nagar-independent-building": ["Independent Building for Sale, Viman Nagar Pune | Estatix", "Vacant former college building on an 895 sq. m. plot in Viman Nagar. Explore office, training and conversion feasibility. Price and details on enquiry."],
+  "/properties/viman-nagar-leased-building": ["Leased Office Building for Sale, Viman Nagar Pune | Estatix", "Leased back-office building in Viman Nagar with reported rent of ₹4 lakh/month. Review tenancy, owner-occupation options and feasibility. Price on enquiry."],
   "/": [
     "Real Estate Mandate Sales & Land Consultants in Pune | Estatix",
     "Estatix supports developers and investors with mandate sales, land brokerage, JV opportunities, high-end residential sales and hospitality consulting in Pune."

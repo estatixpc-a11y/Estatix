@@ -104,7 +104,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               ESTATIX ADVISORY
             </span>
             <h2 id="modal-title" className="text-xl font-bold font-sans">
-              Book an Advisory Consultation
+              {sourceContext.includes('Use-specific feasibility review') ? 'Request a Feasibility Review' : 'Book an Advisory Consultation'}
             </h2>
           </div>
           <button
@@ -240,7 +240,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 rows={2}
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                placeholder="Micro-market, budget range, or specific developer brief..."
+                placeholder={sourceContext.includes('Use-specific feasibility review') ? 'Proposed use, number of occupants or units, budget and preferred timeline...' : 'Micro-market, budget range, or specific developer brief...'}
                 className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800"
               />
             </div>
