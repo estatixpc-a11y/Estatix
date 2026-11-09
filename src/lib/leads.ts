@@ -15,7 +15,6 @@ export async function saveFsiLead(lead: FsiLead): Promise<boolean> {
       method: 'POST',
       headers: {
         apikey: supabaseConfig.publishableKey,
-        Authorization: `Bearer ${supabaseConfig.publishableKey}`,
         'Content-Type': 'application/json',
         Prefer: 'return=minimal',
       },
