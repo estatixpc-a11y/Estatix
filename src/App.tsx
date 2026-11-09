@@ -23,6 +23,7 @@ import { OurWorkPage } from './pages/OurWorkPage';
 import { ChannelPartnersPage } from './pages/ChannelPartnersPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { FsiCalculatorPage } from './pages/FsiCalculatorPage';
 import { EnquiryCategory } from './types';
 
 // Scroll to top helper on route change
@@ -83,6 +84,7 @@ export function App({initialPath}: {initialPath?:string} = {}) {
             <Route path="/our-work/:slug" element={<CaseStudyPage onOpenConsultation={() => openConsultation('consultation', 'Case Study')} />} />
             <Route path="/channel-partners" element={<ChannelPartnersPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/fsi-calculator" element={<FsiCalculatorPage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

@@ -88,6 +88,12 @@ export const HospitalityConsultingPage: React.FC<HospitalityConsultingPageProps>
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Advisory Desk</span>
               </a>
+              <Link
+                to="/fsi-calculator"
+                className="px-6 py-3.5 border border-slate-400 hover:border-white text-white font-semibold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center gap-2"
+              >
+                <span>Free FSI Calculator</span>
+              </Link>
             </div>
           </div>
         </div>

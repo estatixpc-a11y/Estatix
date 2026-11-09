@@ -55,6 +55,10 @@ export const pageMetadata: Record<string,[string,string]> = {
     "Contact Estatix | Adarsh & Kevin, Pune",
     "Speak with Adarsh on +91 7000489767 or Kevin on +91 93733 57620. Visit Estatix at Bramhacorp Business Park, Wadgaon Sheri, Pune."
   ],
+  "/fsi-calculator": [
+    "FSI Calculator Pune & PMRDA (UDCPR 2020) | Estatix",
+    "Free FSI calculator for Pune, PCMC and PMRDA land. Estimate basic FSI, premium FSI, TDR, ancillary FSI and hotel room capacity under UDCPR 2020."
+  ],
   "/privacy": [
     "Privacy & Enquiries | Estatix",
     "Learn how Estatix collects enquiry details through Netlify Forms and how to contact us about your information."
